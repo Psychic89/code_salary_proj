@@ -101,3 +101,6 @@ with open(file_name, 'rb') as pickled:
 model.predict(np.array(list(X_test.iloc[1,:])).reshape(1,-1))[0]
 
 list(X_test.iloc[1,:])
+
+#Even though lasso performed worse in this use case, it is still mmore sense because there is a normalization effect and we have a sparse matrix
+# Random Forest is also good because we have a lot of zeros and ones and is a good use cas ebecause we are using a bunch of decision trees
