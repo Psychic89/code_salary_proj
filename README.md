@@ -13,9 +13,6 @@
 * Scraper used: https://github.com/arapfaik/scraping-glassdoor-selenium
 * Article on how to use the scraper: https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905
 
-# Project walk-through
-* Ken Jee: https://www.youtube.com/playlist?list=PL2zq7klxX5ASFejJj80ob9ZAnBHdz5O1t
-
 # Webscraping overview
 * Modified the above webscraper to scrape over 350 data science job posts in Germany
 
