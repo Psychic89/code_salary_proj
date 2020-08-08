@@ -8,7 +8,7 @@
 * Deploying the model using Flask
 
 ## Code and resources
-* Python Version: 3.2
+* Python Version: 3.8.3
 * Packages used: pandas, sklearn, mumpy, matplotlib, selenium, seaborn
 * Scraper used: https://github.com/arapfaik/scraping-glassdoor-selenium
 * Article on how to use the scraper: https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905
