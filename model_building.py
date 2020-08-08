@@ -25,7 +25,7 @@ df_dum = pd.get_dummies(df_model)
 from sklearn.model_selection import train_test_split
 
 X = df_dum.drop('company_age', axis =1)
-y = df_dum.Bewertung.values
+y = df_dum.company_age.values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -44,8 +44,9 @@ lm.fit(X_train, y_train)
 
 np.mean(cross_val_score(lm,X_train,y_train, scoring = 'neg_mean_absolute_error', cv= 3))
 
-# lasso regression
-lm_l = Lasso()
+# lasso regression 
+lm_l = Lasso(alpha=.13)
+lm_l.fit(X_train,y_train)
 np.mean(cross_val_score(lm_l,X_train,y_train, scoring = 'neg_mean_absolute_error', cv= 3))
 
 alpha = []
@@ -77,6 +78,7 @@ gs.fit(X_train,y_train)
 gs.best_score_
 gs.best_estimator_
 
+
 # test ensembles 
 tpred_lm = lm.predict(X_test)
 tpred_lml = lm_l.predict(X_test)
@@ -102,5 +104,6 @@ model.predict(np.array(list(X_test.iloc[1,:])).reshape(1,-1))[0]
 
 list(X_test.iloc[1,:])
 
-#Even though lasso performed worse in this use case, it is still mmore sense because there is a normalization effect and we have a sparse matrix
-# Random Forest is also good because we have a lot of zeros and ones and is a good use cas ebecause we are using a bunch of decision trees
+#Even though lasso performed worse in this use case, it still makes more sense because there is a normalization effect and we have a sparse matrix
+# Random Forest is also good because we have a lot of zeros and ones and is a good use case because we are using a bunch of decision trees
+
